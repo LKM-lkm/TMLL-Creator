@@ -1,0 +1,26 @@
+<tt xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:amll="http://www.example.com/ns/amll" xmlns:itunes="http://music.apple.com/lyric-ttml-internal">
+  <head>
+    <metadata>
+      <ttm:agent type="person" xml:id="v1"/>
+      <amll:meta key="musicName" value="{{ song_title or 'Unknown Song' }}"/>
+      <amll:meta key="artists" value="{{ artist or 'Unknown Artist' }}"/>
+      <amll:meta key="album" value="{{ album or 'Unknown Album' }}"/>
+      <amll:meta key="ttmlAuthorGithub" value="TTML-Generator"/>
+    </metadata>
+  </head>
+  <body dur="{{ total_duration or '00:00.000' }}">
+    <div begin="00:00.000" end="{{ total_duration or '00:00.000' }}">
+      {% for line in lyrics %}
+      {% if line.role == 'x-bg' %}
+      <p begin="{{ line.start }}" end="{{ line.end }}" ttm:agent="v1" ttm:role="x-bg" itunes:key="{{ line.key or 'None' }}">
+        {{ line.text }}
+      </p>
+      {% else %}
+      <p begin="{{ line.start }}" end="{{ line.end }}" ttm:agent="v1" itunes:key="{{ line.key or 'None' }}">
+        {{ line.text }}{% if line.bg_text %}<span ttm:role="x-bg" begin="{{ line.bg_start or line.start }}" end="{{ line.bg_end or line.end }}">{{ line.bg_text }}</span>{% endif %}
+      </p>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </body>
+</tt>

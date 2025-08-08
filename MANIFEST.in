@@ -1,0 +1,27 @@
+# Include documentation
+include README.md
+include LICENSE
+include CHANGELOG.md
+include CONTRIBUTING.md
+
+# Include configuration files
+include requirements.txt
+include requirements-dev.txt
+
+# Include templates
+recursive-include ttml_generator/templates *.j2 *.xml
+
+# Include scripts
+include run_gui.py
+include install_dependencies.py
+include check_ffmpeg.py
+
+# Exclude unnecessary files
+exclude test_ttml.py
+exclude 项目文档.md
+exclude TTML标准.md
+exclude PROJECT_STRUCTURE.md
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude backup *
+recursive-exclude output *

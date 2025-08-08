@@ -1,0 +1,8 @@
+jinja2>=3.0.0
+pydub>=0.25.0
+pygame>=2.0.0
+pyperclip>=1.8.0
+matplotlib>=3.5.0
+numpy>=1.21.0
+librosa>=0.10.0
+soundfile>=0.12.0
