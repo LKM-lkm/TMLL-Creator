@@ -165,7 +165,7 @@ python install_ffmpeg_minimal.py
 
 如果您遇到问题或有建议，请：
 - 提交 [Issue](https://github.com/your-username/ttml-generator/issues)
-- 发送邮件至：[](mailto:lkm836972@outlook.com)
+- 发送邮件至：[发送邮件给我](mailto:lkm836972@outlook.com)
 
 ---
 
